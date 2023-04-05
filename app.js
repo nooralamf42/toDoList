@@ -28,14 +28,15 @@ taskBtn.onclick = () =>{
     else if(taskDate.value == ""){
         taskDate.placeholder = "Fill Task Date!!"
         setTimeout(()=>{
-            taskName.placeholder = "Task Date"
+            taskName.placeholder = "Due date and time"
         },1500)
     }
     else{
         addAudio.pause()
     addAudio.currentTime = 0
     addAudio.play()
-
+    let newDate = new Date(taskDate.value)
+    const taskDateString = newDate.toLocaleString()
     previousData.classList.add("hide")
     let newTask = document.createElement("div")
     newTask.innerHTML = `
@@ -45,13 +46,16 @@ taskBtn.onclick = () =>{
             <div class="taskContent">
                 <h3 class="newTaskName">${taskName.value}</h3>
                 <p class="newTaskDescription">${taskDescription.value}</p>
-                <p class="newTaskDate">${taskDate.value}</p>
+                <p class="newTaskDate">${taskDateString}</p>
             </div>
         </div>
     </div>
     `
     tasksBox.appendChild(newTask)
-
+    taskName.value = ""
+    taskDescription.value = ""
+    taskDate.value = ""
+    
     const taskCompleted = document.querySelectorAll("#tick")
     const newTaskName = document.querySelectorAll(".newTaskName")
     const newTaskDescription = document.querySelectorAll(".newTaskDescription")
