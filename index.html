@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/906/906334.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="tasks innerContent" id="tasksBox">
+            <h1 class="task-heading">My Todo's</h1>
+            <div class="data">
+                <img src="logo.jpg" alt="">
+                <h1>You have no tasks today</h1>
+                <p>Start adding your new tasks</p>
+            </div>
+
+        </div>
+        <div class="task-maker innerContent">
+            <input type="text" id="taskName" placeholder="Task Name Here">
+            <input type="text" id="taskDescription" placeholder="Description">
+            <div class="wrapper">
+                <div>
+                    <input type="text"id="taskDate" placeholder="Due date" >
+                </div>
+                <button id="taskBtn">Add task</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
