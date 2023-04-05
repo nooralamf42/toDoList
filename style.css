@@ -200,6 +200,10 @@ button:hover{
     #taskDate{
         width: 80%;
     }
+    
+    #taskDate:focus{
+      width: 200px
+    }
 
     #taskName{
         font-size: 19px;
