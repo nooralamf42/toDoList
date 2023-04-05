@@ -6,12 +6,36 @@ const addAudio = new Audio("https://cdn.pixabay.com/download/audio/2022/10/30/au
 const taskCompletedAudio = new Audio("https://cdn.pixabay.com/download/audio/2023/02/28/audio_52ccaf1a85.mp3?filename=click-button-140881.mp3")
 
 taskBtn.onclick = () =>{
-    addAudio.pause()
+
+    const taskName = document.getElementById("taskName")
+    const taskDescription = document.getElementById("taskDescription")
+    const taskDate = document.getElementById("taskDate")
+
+    if(taskName.value == ""){
+        taskName.placeholder = "Fill Task Name!!"
+        setTimeout(()=>{
+            taskName.placeholder = "Task Name"
+        },1500)
+    }
+
+    else if(taskDescription.value == ""){
+        taskDescription.placeholder = "Fill Task Description!!"
+        setTimeout(()=>{
+            taskName.placeholder = "Task Desciption"
+        },1500)
+    }
+
+    else if(taskDate.value == ""){
+        taskDate.placeholder = "Fill Task Date!!"
+        setTimeout(()=>{
+            taskName.placeholder = "Task Date"
+        },1500)
+    }
+    else{
+        addAudio.pause()
     addAudio.currentTime = 0
     addAudio.play()
-    const taskName = document.getElementById("taskName").value
-    const taskDescription = document.getElementById("taskDescription").value
-    const taskDate = document.getElementById("taskDate").value
+
     previousData.classList.add("hide")
     let newTask = document.createElement("div")
     newTask.innerHTML = `
@@ -19,9 +43,9 @@ taskBtn.onclick = () =>{
         <div class="insideBox">
             <div class="tick-box" id="tick"></div>
             <div class="taskContent">
-                <h3 class="newTaskName">${taskName}</h3>
-                <p class="newTaskDescription">${taskDescription}</p>
-                <p class="newTaskDate">${taskDate}</p>
+                <h3 class="newTaskName">${taskName.value}</h3>
+                <p class="newTaskDescription">${taskDescription.value}</p>
+                <p class="newTaskDate">${taskDate.value}</p>
             </div>
         </div>
     </div>
@@ -46,5 +70,5 @@ taskBtn.onclick = () =>{
             taskContent[index].style.backgroundColor = "#ffdca4"
         }
     })
-    console.log(taskCompleted)
+    }
 }
