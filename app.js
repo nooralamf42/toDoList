@@ -10,6 +10,7 @@ taskBtn.onclick = () =>{
     const taskName = document.getElementById("taskName")
     const taskDescription = document.getElementById("taskDescription")
     const taskDate = document.getElementById("taskDate")
+    taskDate.type='text'
 
     if(taskName.value == ""){
         taskName.placeholder = "Fill Task Name!!"
