@@ -5,8 +5,11 @@ const tasksBox = document.getElementById("tasksBox")
 const addAudio = new Audio("https://cdn.pixabay.com/download/audio/2022/10/30/audio_6634b0add4.mp3?filename=click-124467.mp3")
 const taskCompletedAudio = new Audio("https://cdn.pixabay.com/download/audio/2023/02/28/audio_52ccaf1a85.mp3?filename=click-button-140881.mp3")
 
-taskBtn.onclick = () =>{
+document.getElementById("taskDate").addEventListener('focus', () => {
+  taskDate.click()
+})
 
+taskBtn.onclick = () =>{
     const taskName = document.getElementById("taskName")
     const taskDescription = document.getElementById("taskDescription")
     const taskDate = document.getElementById("taskDate")
@@ -19,17 +22,17 @@ taskBtn.onclick = () =>{
         },1500)
     }
 
-    else if(taskDescription.value == ""){
+    if(taskDescription.value == ""){
         taskDescription.placeholder = "Fill Task Description!!"
         setTimeout(()=>{
-            taskName.placeholder = "Task Desciption"
+            taskDescription.placeholder = "Task Desciption"
         },1500)
     }
 
-    else if(taskDate.value == ""){
+    if(taskDate.value == ""){
         taskDate.placeholder = "Fill Task Date!!"
         setTimeout(()=>{
-            taskName.placeholder = "Due date and time"
+            taskDate.placeholder = "Due date and time"
         },1500)
     }
     else{
