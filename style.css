@@ -75,6 +75,11 @@ input::placeholder{
 
 }
 
+.taskContent {
+    word-wrap: break-word;
+    width: 90%;
+}
+
 #taskName, #taskDescription{
     border:none;
     display: block;
